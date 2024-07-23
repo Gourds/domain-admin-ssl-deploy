@@ -1,0 +1,11 @@
+port: 55433
+level: info
+secret: "vqQ2uVaAFj2DXDbbicw7"
+
+cmds: {
+	"cmd_simple_nginx": "nginx -s reload",
+	"cmd_docker_nginx": "docker exec -it nginx nginx -s reload",
+  "cmd_test_1": "echo 123 > somefile",
+	"cmd_test_2": "pwd && ls"
+}
+

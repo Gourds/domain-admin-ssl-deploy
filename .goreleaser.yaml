@@ -1,0 +1,38 @@
+project_name: domain-admin-ssl-deploy
+
+env:
+  - GO111MODULE=on
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    main: main.go
+    binary: domain-admin-ssl-deploy
+    goos:
+      - darwin
+      - linux
+      - windows
+      - freebsd
+    goarch:
+      - amd64
+      - 386
+      - arm
+      - arm64
+      - riscv64
+    goarm:
+      - 5
+      - 6
+      - 7
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: freebsd
+        goarch: arm
+
+archives:
+  -
+    name_template: "{{.Os}}-{{.Arch}}{{if .Arm}}v{{.Arm}}{{end}}-{{ .ProjectName }}"
+    format: tar.gz
+    format_overrides:
+      - goos: windows
+        format: zip

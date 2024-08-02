@@ -37,3 +37,14 @@ curl --location 'http://localhost:55433/issueCertificate' \
 }
 '
 ```
+
+```sh
+http://localhost:55433/issueCertificate
+
+
+{
+  "Token": "vqQ2uVaAFj2DXDbbicw7",
+  "Key-Save-Path": "/data/safeline/resources/nginx/certs/",
+  "Deploy-Cmd": "cmd_waf_base_02"
+}
+```
